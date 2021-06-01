@@ -34,7 +34,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{{url('dessinateurs')}}">Les dessinateurs</a></li>
-                                <li><a class="dropdown-item" href="{{url('scenaristes')}}">Les scenaristes</a></li>
+                                <li><a class="dropdown-item" href="{{url('collections')}}">Les collections</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -25,4 +25,9 @@ class Manga extends Model
     {
         return $this->belongsTo(Genre::class);
     }
+
+    public function collections()
+    {
+        return $this->belongsToMany(Collection::class);
+    }
 }
