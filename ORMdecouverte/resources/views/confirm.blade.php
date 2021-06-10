@@ -4,9 +4,9 @@
 <br>
 <div class="container">
     <div class="row card text-white bg-dark">
-        <h4 class="card-header">Ajouter un manga</h4>
+        <h4 class="card-header">Ajouter/Modifier un manga</h4>
         <div class="card-body">
-            <p>Le nouveau manga a été ajouté.</p>
+            <p>Le nouveau manga a été ajouté/modifié.</p>
         </div>
     </div>
 </div>

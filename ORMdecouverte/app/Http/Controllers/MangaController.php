@@ -60,7 +60,7 @@ class MangaController extends Controller
      */
     public function edit(Manga $manga)
     {
-        //
+        return view('edit',compact('manga'));
     }
 
     /**
@@ -70,9 +70,10 @@ class MangaController extends Controller
      * @param  \App\Models\Manga  $manga
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Manga $manga)
+    public function update(InsertMangaRequest $request, Manga $manga)
     {
-        //
+        $manga->update($request->all());
+        return view('confirm');
     }
 
     /**
