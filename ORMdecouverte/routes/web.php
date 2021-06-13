@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MangaController;
-use App\Http\Controllers\TestFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +14,16 @@ use App\Http\Controllers\TestFormController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::resource('mangas',MangaController::class);
+Route::get('/',[MangaController::class,'index']);
 
-Route::get('testFormulaire', [TestFormController::class, 'getInfos']);
-Route::post('testFormulaire', [TestFormController::class, 'postInfos']);
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth'])->name('dashboard');
+
+Route::resource("mangas",MangaController::class);
+
+require __DIR__.'/auth.php';

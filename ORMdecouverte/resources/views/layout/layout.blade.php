@@ -5,6 +5,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/mangas.css">
         <link rel="stylesheet" href="css/mangas.css">
+        <link rel="stylesheet" href="../../css/mangas.css">
 
         <title>
             @yield('titrePage')
@@ -35,8 +36,29 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{{url('dessinateurs')}}">Les dessinateurs</a></li>
-                                <li><a class="dropdown-item" href="{{url('scenaristes')}}">Les scenaristes</a></li>
+                                <li><a class="dropdown-item" href="{{url('scenaristes')}}">Les scénaristes</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            @auth
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Bienvenue, {{ Auth::user()->name }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" 
+                                            onclick="event.preventDefault(); 
+                                                document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            @else 
+                                <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
+                            @endauth
                         </li>
                     </ul>
                 </div>
